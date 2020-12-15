@@ -30,10 +30,6 @@ const Recipies = () => {
     });
   }
 
-  const showCurrentCategoryMeals = () => {
-
-  }
-
   return (
     <div className="Recipies" data-testid="Recipies">
       <h1>Categories</h1>

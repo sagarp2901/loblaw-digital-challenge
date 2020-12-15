@@ -1,20 +1,19 @@
 import './App.css';
-import Recipes from './components/Recipies/Recipies';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-import Meals from './components/Meals/Meals';
+import Recipes from './components/Recipies/Recipies';
+import RecipeDetail from './components/RecipeDetail/RecipeDetail';
 
 function App() {
   return (
     <div className="App">
       <Router>
       <Switch>
-        <Route path="/meals">
-          <Meals />
+        <Route path="/recipe-detail">
+          <RecipeDetail />
         </Route>
         <Route exact path="/">
           <Recipes />
