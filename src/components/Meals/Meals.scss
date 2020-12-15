@@ -1,0 +1,14 @@
+.Meals {
+  display: flex;
+  justify-content: space-between;
+  max-height: 400px;
+  margin: 30px;
+  overflow: auto;
+  .meal-container {
+    margin-right: 30px;
+    img {
+      border-radius: 10px;
+      width: 200px;
+    }
+  }
+}
