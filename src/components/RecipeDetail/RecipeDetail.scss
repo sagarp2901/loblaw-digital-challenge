@@ -1,16 +1,36 @@
 .RecipeDetail {
+  padding: 30px;
   img {
     width: 30vw;
     min-width: 300px;
     max-width: 500px;
   }
-  .ingredients-container {
+
+  .text-container {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .youtube-container {
+    display: flex;
+    justify-content: center;
+  }
+  .ingredients-container,
+  .instructions {
+    display: grid;
+    justify-content: center;
   }
 
   li {
     text-align: left;
   }
+}
 
-  .instructions {
+@media only screen and (max-width: 600px) {
+  .RecipeDetail {
+    padding: 5px;
+    .text-container {
+      padding: 5px;
+    }
   }
 }

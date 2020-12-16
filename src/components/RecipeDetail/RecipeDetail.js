@@ -10,7 +10,7 @@ const RecipeDetail = () => {
   const [mealDetail, setMealDetail] = useState(null);
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState([]);
-  const [youtubeUrl, setYoutubeUrl] = useState("");
+
   useEffect(() => {
     if(location.state) {
       getRecipeById(location.state.detailId).then(res => {
@@ -44,24 +44,28 @@ const RecipeDetail = () => {
   <div className="RecipeDetail" data-testid="RecipeDetail">
     {mealDetail && <div className="detail-container">
         <h2>{mealDetail.strMeal}</h2>
-        <img src={mealDetail.strMealThumb}/>
-        <h4>Ingredients</h4>
-        <div className="ingredients-container">
-          {ingredients && <ul>
-            {ingredients.map((item, index)=> (
-              item.ingredient && <li key={index}>{item.measure} {item.ingredient}</li>
+        <div><img src={mealDetail.strMealThumb}/></div>
+        {mealDetail.strSource && <a target="new" href={mealDetail.strSource}>Take me to the Article</a>}
+        <div className="text-container">
+          <div className="ingredients-container">
+            {ingredients && <ul>
+              <h4>Ingredients</h4>
+              {ingredients.map((item, index)=> (
+                item.ingredient && <li key={index}>{item.measure} {item.ingredient}</li>
+              ))}
+              </ul>}
+          </div>
+          <div className="instructions">
+            {instructions && <ul>
+            <h4>Instructions</h4>
+            {instructions.map((instruction, index)=> (
+              instruction && <li key={index}>{instruction}.</li>
             ))}
             </ul>}
+          </div>
         </div>
-        <h4>Instructions</h4>
-        <div>
-          <ul>
-          {instructions.map((instruction, index)=> (
-            instruction && <li key={index}>{instruction}.</li>
-          ))}
-          </ul>
-        </div><div>
-        {mealDetail.strYoutube && <ReactPlayer url={mealDetail.strYoutube}/>}
+        <div className="youtube-container">
+          {mealDetail.strYoutube && <ReactPlayer url={mealDetail.strYoutube}/>}
         </div>
       </div>}
   </div>
