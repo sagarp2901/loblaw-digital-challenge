@@ -46,7 +46,7 @@ const Meals = ({category}) => {
         <Card>
           <Accordion.Toggle as={Card.Header} eventKey="0" onClick={getRecipes}>
             <Button variant="light" className="toggle-recipe-btn" onClick={getRecipes}>
-            {isOpen? <FaChevronDown className="chevron"/>: <FaChevronRight className="chevron"/>}Checkout Recipes
+            {isOpen? <FaChevronDown className="chevron"/>: <FaChevronRight className="chevron"/>}Checkout {category} Recipes
             </Button>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
