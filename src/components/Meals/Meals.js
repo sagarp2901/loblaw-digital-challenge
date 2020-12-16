@@ -28,6 +28,11 @@ const Meals = ({category}) => {
     history.push('recipe-detail', {detailId: meal.idMeal});
   }
 
+  const clickOnDetail = (event, meal) => {
+    if(event.keyCode !== 13) return;
+    goToDetail(meal);
+  }
+
   return (
     <div className="Meals" data-testid="Meals">
        <Card>
@@ -41,7 +46,7 @@ const Meals = ({category}) => {
           <Accordion.Collapse eventKey="0">
             <Card.Body>
               {meals && meals.map((meal, index)=> (
-                <div key={index} className="meal-container" onClick={() => goToDetail(meal)}>
+                <div key={index} className="meal-container" tabIndex="0" onKeyUp={($event) => clickOnDetail($event, meal)} onClick={() => goToDetail(meal)}>
                   <img src={meal.strMealThumb} alt="thumb-meal"/>
                   <div>{meal.strMeal}</div>
                 </div>
