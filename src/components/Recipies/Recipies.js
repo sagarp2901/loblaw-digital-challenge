@@ -7,6 +7,7 @@ const Recipies = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
+    // Fetch all available meal categories
     getAllCategories().then(res => {
       setCategories(res.categories);
     }).catch(err=> {
@@ -27,6 +28,7 @@ const Recipies = () => {
               <p>{category.strCategoryDescription}</p>
             </div>
           </div>
+          {/* Meals component with accordian */}
           <Meals category={category.strCategory}/>
         </div>
       ))}

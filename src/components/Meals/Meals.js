@@ -14,8 +14,9 @@ const Meals = ({category}) => {
 
   const getRecipes = () => {
     setOpen(!isOpen);
+    // Make call only once to fetch the data
     if(meals.length) return;
-    // Make call only once
+    // Fetch all recipes in a category when accordian is expanded
     getAllRecipesInCategory(category).then(res => {
       setMeals(res.meals);
     }).catch(err => {
@@ -24,6 +25,7 @@ const Meals = ({category}) => {
   }
 
   const goToDetail = (meal) => {
+    // Navigate to recipe detail component
     history.push('recipe-detail', {detailId: meal.idMeal});
   }
 

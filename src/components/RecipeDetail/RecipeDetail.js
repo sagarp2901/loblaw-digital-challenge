@@ -48,19 +48,20 @@ const RecipeDetail = () => {
             {ingredients && <ul>
               <h4>Ingredients</h4>
               {ingredients.map((item, index)=> (
-                item.ingredient && <li key={index}>{item.measure} {item.ingredient}</li>
+                item.ingredient && <li key={index}>{item.measure} {item.ingredient}.</li>
               ))}
               </ul>}
           </div>
           <div className="instructions">
             {instructions && <ul>
-            <h4>Instructions</h4>
-            {instructions.map((instruction, index)=> (
-              instruction && <li key={index}>{instruction}.</li>
-            ))}
+              <h4>Instructions</h4>
+              {instructions.map((instruction, index)=> (
+                instruction && <li key={index}>{instruction}.</li>
+              ))}
             </ul>}
           </div>
         </div>
+        {/* Youtube container for Video */}
         <div className="youtube-container">
           {mealDetail.strYoutube && <ReactPlayer url={mealDetail.strYoutube}/>}
         </div>
