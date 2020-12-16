@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import './Recipies.scss';
-import {getAllCategories, getAllRecipesInCategory} from '../../services/RecipesService';
+import {getAllCategories} from '../../services/RecipesService';
 import Meals from '../Meals/Meals';
 
 const Recipies = () => {
   const [categories, setCategories] = useState([]);
-  const [currentCategory, setCurrentCategory] = useState('');
 
   useEffect(() => {
     getAllCategories().then(res => {
@@ -15,17 +14,6 @@ const Recipies = () => {
       console.log(err);
     });
   }, []);
-
-  const getAllItemsInCategory = (category) => {
-    setCurrentCategory(category.strCategory);
-    // history.push('/meals', {category: category.strCategory});
-    getAllRecipesInCategory(category.strCategory).then(res => {
-      console.log('Items', res);
-      //setMeals(res.meals);
-    }).catch(err=> {
-      console.log(err);
-    });
-  }
 
   return (
     <div className="Recipies" data-testid="Recipies">

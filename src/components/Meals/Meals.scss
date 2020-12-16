@@ -12,19 +12,18 @@
     }
   }
 
-  .toggle-btn-container {
+  .toggle-recipe-btn {
     display: flex;
     align-items: center;
-    color: #37474f;
-  }
-
-  .toggle-recipe-btn {
     border: none;
     margin-left: 5px;
     padding: 10px;
     border-radius: 5px;
     background-color: transparent;
     color: #37474f;
+    .chevron {
+      margin-right: 5px;
+    }
   }
 
   .card {
