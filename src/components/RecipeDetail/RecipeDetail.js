@@ -16,6 +16,7 @@ const RecipeDetail = () => {
       getRecipeById(location.state.detailId).then(res => {
         console.log('Meal Details', res.meals[0]);
         setMealDetail(res.meals[0]);
+        // Format ingredients and instructions into array
         formatIngredients(res.meals[0]);
         formatInstructions(res.meals[0]);
       }).catch(err=> {
@@ -39,7 +40,7 @@ const RecipeDetail = () => {
 
   return (
   <div className="RecipeDetail" data-testid="RecipeDetail">
-    <a className="back" href="/"><FaArrowLeft className="back-icon" />Back</a>
+    <div className="back-container"><a className="back" href="/"><FaArrowLeft className="back-icon" />Back</a></div>
     {mealDetail && <div className="detail-container">
         <h2>{mealDetail.strMeal}</h2>
         <div><img src={mealDetail.strMealThumb} alt="thumb-meal"/></div>

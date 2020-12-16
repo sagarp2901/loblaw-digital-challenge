@@ -18,6 +18,7 @@ const Recipies = () => {
   return (
     <div className="Recipies" data-testid="Recipies">
       <h1>Categories</h1>
+      <p>What would you like to eat today?</p>
       {categories.map((category, index)=> (
         <div key={index} className="category-container">
           <div className="category-discription">

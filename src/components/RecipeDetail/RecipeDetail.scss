@@ -1,6 +1,9 @@
 .RecipeDetail {
   padding: 30px;
 
+  .back-container {
+    display: flex;
+  }
   .back {
     float: left;
     font-size: 20px;
