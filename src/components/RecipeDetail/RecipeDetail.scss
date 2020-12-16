@@ -1,1 +1,16 @@
-.RecipeDetail {}
+.RecipeDetail {
+  img {
+    width: 30vw;
+    min-width: 300px;
+    max-width: 500px;
+  }
+  .ingredients-container {
+  }
+
+  li {
+    text-align: left;
+  }
+
+  .instructions {
+  }
+}
