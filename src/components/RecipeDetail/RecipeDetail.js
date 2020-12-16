@@ -14,7 +14,6 @@ const RecipeDetail = () => {
 
   useEffect(() => {
       getRecipeById(location.state.detailId).then(res => {
-        console.log('Meal Details', res.meals[0]);
         setMealDetail(res.meals[0]);
         // Format ingredients and instructions into array
         formatIngredients(res.meals[0]);
@@ -35,7 +34,6 @@ const RecipeDetail = () => {
   const formatInstructions = (meal) => {
     const instructions = meal.strInstructions.split('.');
     setInstructions(instructions);
-    console.log(instructions);
   }
 
   return (

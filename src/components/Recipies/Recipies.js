@@ -8,7 +8,6 @@ const Recipies = () => {
 
   useEffect(() => {
     getAllCategories().then(res => {
-      console.log(res);
       setCategories(res.categories);
     }).catch(err=> {
       console.log(err);

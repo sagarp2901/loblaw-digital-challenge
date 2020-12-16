@@ -17,9 +17,8 @@ const Meals = ({category}) => {
     if(meals.length) return;
     // Make call only once
     getAllRecipesInCategory(category).then(res => {
-      console.log('Items', res);
       setMeals(res.meals);
-    }).catch(err=> {
+    }).catch(err => {
       console.log(err);
     });
   }
