@@ -1,14 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import './Recipies.scss';
 import {getAllCategories, getAllRecipesInCategory} from '../../services/RecipesService';
-import {useHistory, Link} from 'react-router-dom';
 import Meals from '../Meals/Meals';
 
 const Recipies = () => {
-  const history = useHistory();
   const [categories, setCategories] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('');
-  const [meals, setMeals] = useState([]);
 
   useEffect(() => {
     getAllCategories().then(res => {
@@ -24,7 +21,7 @@ const Recipies = () => {
     // history.push('/meals', {category: category.strCategory});
     getAllRecipesInCategory(category.strCategory).then(res => {
       console.log('Items', res);
-      setMeals(res.meals);
+      //setMeals(res.meals);
     }).catch(err=> {
       console.log(err);
     });
@@ -40,10 +37,9 @@ const Recipies = () => {
             <div className="text-container">
               <h2>{category.strCategory}</h2>
               <p>{category.strCategoryDescription}</p>
-              <button className="recipe-btn" onClick={() => getAllItemsInCategory(category)}>Checkout Recipes</button>
             </div>
           </div>
-          {currentCategory === category.strCategory? <Meals meals={meals}/> : null}
+          <Meals category={category.strCategory}/>
         </div>
       ))}
     </div>

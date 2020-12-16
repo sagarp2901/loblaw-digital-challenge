@@ -11,4 +11,33 @@
       width: 200px;
     }
   }
+
+  .toggle-btn-container {
+    display: flex;
+    align-items: center;
+    color: #37474f;
+  }
+
+  .toggle-recipe-btn {
+    border: none;
+    margin-left: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #37474f;
+  }
+
+  .card {
+    width: 100%;
+  }
+  .card-header {
+    display: flex;
+    cursor: pointer;
+  }
+  .card-body {
+    padding: 0;
+    display: flex;
+    overflow: auto;
+    margin: 20px;
+  }
 }
