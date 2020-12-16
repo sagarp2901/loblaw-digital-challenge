@@ -1,14 +1,13 @@
 import React, {useEffect, useState} from 'react';
 // import PropTypes from 'prop-types';
 import './RecipeDetail.scss';
-import {useLocation, useHistory} from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
 import {getRecipeById} from '../../services/RecipesService';
 import ReactPlayer from "react-player";
 import { FaArrowLeft } from 'react-icons/fa';
 
 const RecipeDetail = () => {
   const location = useLocation();
-  const history = useHistory();
   const [mealDetail, setMealDetail] = useState(null);
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState([]);
@@ -38,20 +37,9 @@ const RecipeDetail = () => {
     console.log(instructions);
   }
 
-  const goBack = () => {
-    history.push('/');
-  }
-
-  const goBackKeyUp = (event) => {
-    if(event.keyCode !== 13) return;
-    goBack();
-  }
-
-  
-
   return (
   <div className="RecipeDetail" data-testid="RecipeDetail">
-    <a className="back" onKeyUp={goBackKeyUp} onClick={goBack} tabIndex="0"><FaArrowLeft className="back-icon" />Back</a>
+    <a className="back" href="/"><FaArrowLeft className="back-icon" />Back</a>
     {mealDetail && <div className="detail-container">
         <h2>{mealDetail.strMeal}</h2>
         <div><img src={mealDetail.strMealThumb} alt="thumb-meal"/></div>
