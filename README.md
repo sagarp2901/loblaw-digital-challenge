@@ -5,14 +5,21 @@
 ## About
 
 This App is built using React JS v17.0 and it integrates with endpoints from the public meals API [The Meal DB](https://www.themealdb.com/api.php) as requested.
+
 The home page displays a list of categories with an image and some description.
 Each list item contains an accordian which can be expanded to display a horizontal scrollable list of recipes for each category.
 Users can click on each recipe in each category and navigate to the details page.
 The details page provides the users with a list of ingredients and instructions for the recipe. In some cases, it also provides a youtube video and an url to the original article if it exists.
 
+## Assumptions
+
+1. Website should be responsive and user friendly to scale across various mobile devices, tablets and desktops.
+2. Users are accessing the website using lastest versions of Chromium based browsers - Chrome, Edge, Safari etc.
+3. Users would be provided sufficient training for navigating across the application.
+
 ## Features
 
-1. Responsive UI - The UI is responsive and scales for a variety of mobile devices, tablets and desktops.
+1. Responsive UI - The UI is responsive to support a variety of mobile devices, tablets and desktops.
 2. Keyboard accessibility - Users can navigate through the app using tab and enter keys.
 
 ## Available Scripts
