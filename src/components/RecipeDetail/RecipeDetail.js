@@ -12,7 +12,6 @@ const RecipeDetail = () => {
   const [instructions, setInstructions] = useState([]);
 
   useEffect(() => {
-    if(location.state) {
       getRecipeById(location.state.detailId).then(res => {
         console.log('Meal Details', res.meals[0]);
         setMealDetail(res.meals[0]);
@@ -21,8 +20,7 @@ const RecipeDetail = () => {
       }).catch(err=> {
         console.log(err);
       });
-    }
-  }, []);
+  }, [location]);
 
   const formatIngredients = (meal) => {
     const ingredients = [];
@@ -44,7 +42,7 @@ const RecipeDetail = () => {
   <div className="RecipeDetail" data-testid="RecipeDetail">
     {mealDetail && <div className="detail-container">
         <h2>{mealDetail.strMeal}</h2>
-        <div><img src={mealDetail.strMealThumb}/></div>
+        <div><img src={mealDetail.strMealThumb} alt="thumb-meal"/></div>
         {mealDetail.strSource && <a target="new" href={mealDetail.strSource}>Take me to the Article</a>}
         <div className="text-container">
           <div className="ingredients-container">

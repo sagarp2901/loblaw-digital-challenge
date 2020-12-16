@@ -1,27 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 // import PropTypes from 'prop-types';
 import './Meals.scss';
 import {getAllRecipesInCategory} from '../../services/RecipesService';
-import {useLocation, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import { Accordion, Card, Button } from 'react-bootstrap'
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Meals = ({category}) => {
-  const location = useLocation();
   const history = useHistory();
   const [meals, setMeals] = useState([]);
   const [isOpen, setOpen] = useState(false);
-
-  useEffect(() => {
-    if(location.state) {
-      getAllRecipesInCategory(category).then(res => {
-        console.log('Items', res);
-      }).catch(err=> {
-        console.log(err);
-      });
-    }
-  }, []);
 
   const getRecipes = () => {
     setOpen(!isOpen);
@@ -53,7 +42,7 @@ const Meals = ({category}) => {
             <Card.Body>
               {meals && meals.map((meal, index)=> (
                 <div key={index} className="meal-container" onClick={() => goToDetail(meal)}>
-                  <img src={meal.strMealThumb}/>
+                  <img src={meal.strMealThumb} alt="thumb-meal"/>
                   <div>{meal.strMeal}</div>
                 </div>
               ))}
