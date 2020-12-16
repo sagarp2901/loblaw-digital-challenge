@@ -40,7 +40,7 @@ const Recipies = () => {
             <div className="text-container">
               <h2>{category.strCategory}</h2>
               <p>{category.strCategoryDescription}</p>
-              <div className="recipe-btn" onClick={() => getAllItemsInCategory(category)}>Checkout Recipes</div>
+              <button className="recipe-btn" onClick={() => getAllItemsInCategory(category)}>Checkout Recipes</button>
             </div>
           </div>
           {currentCategory === category.strCategory? <Meals meals={meals}/> : null}

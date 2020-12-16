@@ -1,8 +1,10 @@
 .Recipies {
+  background-color: #eeeeee;
   padding: 40px;
   .category-container {
-    border: 1px solid grey;
-    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #cccbcb;
+    border-radius: 10px;
     margin-bottom: 20px;
   }
   .category-discription {
@@ -14,9 +16,12 @@
     .text-container {
       width: 100%;
       .recipe-btn {
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #57bbe9;
+        color: white;
         cursor: pointer;
-        color: blue;
-        text-decoration: underline;
       }
     }
     p {
